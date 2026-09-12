@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# TensorFlow / generated artefacts
+*.keras
+*.h5
+*.ckpt
+checkpoints/
+logs/
+*.log
+
+# Experiment outputs (keep the directory itself)
+results/*
+!results/.gitkeep
+
+# Local datasets / caches
+*.npz
+.keras/
+
+# Secrets
+.env
+.env.*
