@@ -1,5 +1,9 @@
 # TensorFlow CNN 图像分类
 
+[![类型](https://img.shields.io/badge/%E7%B1%BB%E5%9E%8B-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-2563eb?style=for-the-badge)](#)
+[![技术](https://img.shields.io/badge/%E6%8A%80%E6%9C%AF-TensorFlow_%2F_Keras-7c3aed?style=for-the-badge)](#)
+
+
 [English README](README.md)
 
 **使用 TensorFlow/Keras 在 CIFAR-10 与 MNIST 上完成可复现的 CNN 图像分类实验，并自动进行模型评估、架构对比和错误案例分析。**
