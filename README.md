@@ -4,7 +4,7 @@
 [![Tech](https://img.shields.io/badge/Tech-TensorFlow_%2F_Keras-7c3aed?style=for-the-badge)](#)
 
 
-[简体中文](README.zh-CN.md)
+**English** · [中文](README.zh-CN.md)
 
 **Reproducible CNN image-classification experiments on CIFAR-10 and MNIST using TensorFlow/Keras, with automated evaluation, architecture comparison, and error analysis.**
 
