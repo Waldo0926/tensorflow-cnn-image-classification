@@ -35,7 +35,7 @@ flowchart LR
     G --> H["模型架构比较"]
 ```
 
-新版保留原课程设计真正想研究的问题——网络深度、filter 数量、池化方式、卷积核和训练时长——但不再把它们写成一组一次性脚本，而是整理成统一、可复现的实验流程。
+新版保留原课程设计真正想研究的问题（网络深度、filter 数量、池化方式、卷积核和训练时长），但不再把它们写成一组一次性脚本，而是整理成统一、可复现的实验流程。
 
 ## 结果速览
 
@@ -71,13 +71,7 @@ flowchart LR
 | `model_summary.txt` | 可复查的模型结构 |
 | `model.keras` | 训练模型；使用 `--no-save-model` 时不保存 |
 
-本地完成一次真实训练后，可以用一条命令把三张最适合展示的图片发布到 README：
-
-```bash
-python experiments/publish_readme_assets.py --run-dir results/mnist/baseline
-```
-
-这条命令会把图片复制到 `docs/assets/readme/`，并**自动更新英文和中文 README 的图片展示区**。这个流程只会发布真实完成的实验产生的图片，不会为了 Portfolio 制造虚假的训练截图。
+下面三张图来自一次真实的 MNIST baseline 运行（`results/mnist/baseline`），存放在 `docs/assets/readme/`，不是做出来的效果图。想更新的话，重新跑一次 baseline，把 `training_curves.png`、`confusion_matrix.png` 和 `prediction_examples.png` 覆盖进去即可。
 
 ### 新版实验图片展示
 
@@ -226,14 +220,14 @@ python src/train.py \
 │       ├── training.py
 │       └── visualization.py
 ├── experiments/
-│   ├── publish_readme_assets.py
 │   ├── run_experiments.py
 │   └── summarize_results.py
 ├── tests/
 │   └── test_reporting.py
 ├── docs/
 │   ├── assets/
-│   │   └── historical-training-curves.png
+│   │   ├── historical-training-curves.png
+│   │   └── readme/              # the three gallery figures
 │   ├── EXPERIMENTS.md
 │   ├── ORIGINAL_WORK.md
 │   └── original/
@@ -262,9 +256,9 @@ python -m unittest discover -s tests -v
 
 由于 TensorFlow 版本、CPU/GPU/Metal 后端和浮点内核不同，完整训练的数值仍可能出现轻微差异。
 
-## 从课程设计到 Portfolio 项目
+## 从课程设计到重构项目
 
-这是本人早期机器学习课程设计的 Portfolio 重构版。原导出的脚本存在格式 / SyntaxError、本地绝对路径、归一化不一致和手工评估逻辑脆弱等问题；新版保留课程实验意图，同时重新实现可复现的数据处理、CNN preset、CLI、完整测试集评估、每类别指标、错误案例可视化以及自动架构比较。
+这是我早期机器学习课程设计的重构版。原导出的脚本存在格式 / SyntaxError、本地绝对路径、归一化不一致和手工评估逻辑脆弱等问题；新版保留课程实验意图，同时重新实现可复现的数据处理、CNN preset、CLI、完整测试集评估、每类别指标、错误案例可视化以及自动架构比较。
 
 公开版原课程报告保存在 [`docs/original/2024-course-report-cn.pdf`](docs/original/2024-course-report-cn.pdf)。为了 Public Repository 的隐私安全，学号已通过真正的 PDF redaction 从底层内容删除；姓名和技术内容保留，用作项目来源证明。
 
@@ -272,4 +266,4 @@ python -m unittest discover -s tests -v
 
 ## 作者
 
-**Shuoxun Wen (Waldo)** — Computer Science undergraduate.
+**Shuoxun Wen (Waldo)**，Monash University 计算机科学专业学生。

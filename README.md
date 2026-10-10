@@ -35,7 +35,7 @@ flowchart LR
     G --> H["Architecture Comparison"]
 ```
 
-The rebuilt workflow keeps the original coursework questions—network depth, filter counts, pooling choices, kernel sizes, and training duration—but turns them into a cleaner experiment pipeline rather than a collection of one-off scripts.
+The rebuilt workflow keeps the original coursework questions (network depth, filter counts, pooling choices, kernel sizes and training duration) but turns them into a cleaner experiment pipeline rather than a collection of one-off scripts.
 
 ## Results at a glance
 
@@ -58,7 +58,7 @@ See [`docs/EXPERIMENTS.md`](docs/EXPERIMENTS.md) for the complete historical exp
 
 ## What one run produces
 
-A standard run exports recruiter-readable evidence instead of only printing a final accuracy:
+A standard run saves files you can inspect afterwards instead of only printing a final accuracy:
 
 | Artefact | Purpose |
 |---|---|
@@ -71,13 +71,7 @@ A standard run exports recruiter-readable evidence instead of only printing a fi
 | `model_summary.txt` | Reproducible model architecture summary |
 | `model.keras` | Trained model unless `--no-save-model` is used |
 
-After a real local run, publish the three main figures into the README with one command:
-
-```bash
-python experiments/publish_readme_assets.py --run-dir results/mnist/baseline
-```
-
-The command copies the figures into `docs/assets/readme/` **and updates both language versions of the README automatically**. This intentionally publishes only figures produced by an actual completed run—no synthetic or fabricated portfolio screenshots.
+The three figures below come from a real MNIST baseline run (`results/mnist/baseline`) and are stored in `docs/assets/readme/`. They are not mock-ups. To refresh them, run the baseline again and copy `training_curves.png`, `confusion_matrix.png` and `prediction_examples.png` over the old ones.
 
 ### Rebuilt-pipeline gallery
 
@@ -226,14 +220,14 @@ Main controls:
 │       ├── training.py
 │       └── visualization.py
 ├── experiments/
-│   ├── publish_readme_assets.py
 │   ├── run_experiments.py
 │   └── summarize_results.py
 ├── tests/
 │   └── test_reporting.py
 ├── docs/
 │   ├── assets/
-│   │   └── historical-training-curves.png
+│   │   ├── historical-training-curves.png
+│   │   └── readme/              # the three gallery figures
 │   ├── EXPERIMENTS.md
 │   ├── ORIGINAL_WORK.md
 │   └── original/
@@ -264,7 +258,7 @@ Exact floating-point results can still vary slightly across TensorFlow versions,
 
 ## Coursework provenance
 
-This repository is a portfolio reconstruction of earlier machine-learning coursework. The original exported scripts had formatting/syntax issues, hard-coded local paths, inconsistent normalisation, and fragile manual evaluation logic. The rebuilt version preserves the experiment intent while adding reproducible data handling, named model presets, CLI controls, full-set evaluation, richer metrics, visual error analysis, and automatic experiment comparison.
+This repository is a rebuild of my earlier machine-learning coursework. The original exported scripts had formatting/syntax issues, hard-coded local paths, inconsistent normalisation, and fragile manual evaluation logic. The rebuilt version preserves the experiment intent while adding reproducible data handling, named model presets, CLI controls, full-set evaluation, richer metrics, visual error analysis, and automatic experiment comparison.
 
 The public source report is archived at [`docs/original/2024-course-report-cn.pdf`](docs/original/2024-course-report-cn.pdf). The student number was removed with true PDF redaction before publication; the technical content and author name are retained as provenance.
 
@@ -272,4 +266,4 @@ More detail: [`docs/ORIGINAL_WORK.md`](docs/ORIGINAL_WORK.md).
 
 ## Author
 
-**Shuoxun Wen (Waldo)** — Computer Science undergraduate.
+**Shuoxun Wen (Waldo)**, Computer Science student at Monash University.
